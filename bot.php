@@ -1,5 +1,5 @@
 <?php
-$access_token = '';
+$access_token = 'iSu2w+Ixj+P8RBMcbVIvcBavjEavTxaWtJEzZRcOFxSAaeFaZ3SQJUQ9bHQ8DxpSmAvoCp9EJrXeKYn0D9BSchtdDGTAT43yTtixVFhFc9QNcgDIdRsTOwsdTTRhMVTyQlu8WzswD73WaPo8VfT2+QdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -15,11 +15,14 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
+			
+			$id = $event['message']['id'];
+			$userId = $event['source']['userId'];
 
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => 'คนเลว'
+				'text' => $id.'/'.$userID
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
