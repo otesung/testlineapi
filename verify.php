@@ -1,7 +1,7 @@
 <?php
 $access_token = '';
 
-$url = 'https://api.line.me/v1/oauth/verify';
+$url = 'https://api.line.me/v2/bot/profile/{userId}';
 
 $headers = array('Authorization: Bearer ' . $access_token);
 
